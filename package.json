@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.19.2",
+    "parser": "^0.1.4",
+    "pug": "^3.0.3"
+  },
+  "name": "python-learning-game",
+  "version": "1.0.0",
+  "description": "Making a web app with digital and non digital components. The goal of the game is to help with the players to have fun and learn python in a fun and enjoyable way.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

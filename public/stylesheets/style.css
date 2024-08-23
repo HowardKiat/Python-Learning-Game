@@ -1,0 +1,93 @@
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 50px;
+    margin: 0; /* Ensure no default margin */
+}
+
+/* Style for h1 elements */
+h1 {
+    color: #333;
+    margin-top: 0; /* Remove default margin */
+}
+
+/* Header styling */
+header {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Navigation styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #007BFF;
+}
+
+/* Main content styling */
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto; 
+    max-width: 1200px; 
+}
+
+/* Form styling */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"], 
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #007BFF;
+    cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+p {
+    color: #333;
+    font-weight: bold;
+}

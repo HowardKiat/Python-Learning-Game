@@ -1,0 +1,13 @@
+extends layout
+block content
+    form(action="/convert", method="post")
+        h1 Temperature Conversion
+        label(for="temperature") Enter Temperature:
+        input(type="number", name="temperature", required)
+        label(for="unit") Select Unit:
+        select(name="unit")
+            option(value="celsius") Celsius
+            option(value="fahrenheit") Fahrenheit
+        button(type="submit") Convert
+        if(result)
+            p Result: #{result}

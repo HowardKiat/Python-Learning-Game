@@ -31,6 +31,10 @@ app.get('/temperature', (req, res) => {
     res.render('temperature', { title: 'Temperature Conversion' });
 });
 
+app.get('/responsivepage', (req, res) => {
+    res.render('responsivepage', { title: 'Responsive Page' });
+});
+
 // Handle the form submission
 app.use('/', temperatureConversion);
 

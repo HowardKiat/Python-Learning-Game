@@ -3,6 +3,7 @@ html
     head
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
+        block head
     body
         header
             h1 My Multi-Page App
@@ -10,5 +11,6 @@ html
                 li: a(href='/') Home
                 li: a(href='/apple_info') Apple Info Exercise
                 li: a(href='/temperature') Temperature
+                li: a(href='/responsivepage') Responsive Page
         main
             block content 

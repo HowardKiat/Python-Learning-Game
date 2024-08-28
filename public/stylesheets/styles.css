@@ -1,33 +1,48 @@
-/* styles.css */
-
-/* General reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+/* Styles specific to content inside .content-container */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
+.content-container header {
   background: #333;
   color: #fff;
   padding: 10px 0;
   text-align: center;
 }
 
-header h1 {
+.content-container header h1 {
   margin: 0;
   font-size: 2em;
 }
 
-ul {
+/* Navigation Styles */
+.content-container nav {
+  margin: 20px 0;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-container nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.content-container nav a:hover {
+  color: #007BFF;
+}
+
+/* List Styles */
+.content-container ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -35,11 +50,11 @@ ul {
   overflow: hidden;
 }
 
-li {
+.content-container li {
   float: left;
 }
 
-li a {
+.content-container li a {
   display: block;
   color: white;
   text-align: center;
@@ -47,73 +62,61 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+.content-container li a:hover {
   background-color: #007BFF;
 }
 
-main {
+/* Main Content Styles */
+.content-container main {
   background-color: #fff;
   padding: 20px;
   margin: 0 auto;
 }
 
-nav {
-  margin: 20px 0;
-  text-align: center;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #007BFF;
-}
-
-section {
+/* Section Styles */
+.content-container section {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-section h1 {
+.content-container section h1 {
   font-size: 1.8em;
   margin-bottom: 10px;
 }
 
-section p {
+.content-container section p {
   margin-bottom: 15px;
 }
 
-article {
+/* Article Styles */
+.content-container article {
   margin-top: 20px;
 }
 
-article h2 {
+.content-container article h2 {
   font-size: 1.6em;
   margin-bottom: 10px;
 }
 
-article figure {
+.content-container article figure {
   text-align: center;
   margin-bottom: 15px;
 }
 
-article img {
+.content-container article img {
   max-width: 100%;
   border-radius: 8px;
 }
 
-article figcaption {
+.content-container article figcaption {
   font-size: 0.9em;
   color: #666;
 }
 
-aside {
+/* Aside Styles */
+.content-container aside {
   margin-top: 20px;
   padding: 10px;
   background: #f9f9f9;
@@ -121,22 +124,23 @@ aside {
   border-radius: 8px;
 }
 
-aside details {
+.content-container aside details {
   margin-bottom: 10px;
 }
 
-aside summary {
+.content-container aside summary {
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 5px;
 }
 
-aside p {
+.content-container aside p {
   padding-left: 10px;
   font-size: 0.95em;
 }
 
-footer {
+/* Footer Styles */
+.content-container footer {
   text-align: center;
   margin-top: 30px;
   padding: 10px;

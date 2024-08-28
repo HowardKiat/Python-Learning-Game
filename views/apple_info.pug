@@ -1,39 +1,38 @@
-html
- head 
-   link(rel='stylesheet', href='/stylesheets/styles.css') 
-   title= title
+extends layout
+block content
 
- body
+  .content-container
     header
-        h1 Apple
-    
- nav 
-    a(href="#") Fuji
-    br
-    a(href="#") Summered
-    br
-    a(href="#") Sciros
- 
- section
-    main
+      h1 Apple
+  
+    nav 
+      a(href="#") Fuji
+      br
+      a(href="#") Summered
+      br
+      a(href="#") Sciros
+
+    section
+      main
         h1 Apples 
         p An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today.
         p Apples have been grown for thousands of years in Asia and Europe and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek, and European Christian tradition.
 
- article 
-    h2 Granny Smith 
-    figure
-        img(src='/images/grannySmith.png', alt='Granny-Smith')
+    article 
+      h2 Granny Smith 
+      figure
+        img(src='/images/grannySmith.png', alt='Granny Smith')
         figcaption Granny Smith 
-    p The Granny Smith, also known as a green apple or sour apple, is an apple cultivar which originated in Australia in 1868.[1] It is named after Maria Ann Smith, who propagated the cultivar from a chance seedling. The tree is thought to be a hybrid of Malus sylvestris, the European wild apple, with the domesticated apple Malus domestica as the polleniser.
+      p The Granny Smith, also known as a green apple or sour apple, is an apple cultivar which originated in Australia in 1868. It is named after Maria Ann Smith, who propagated the cultivar from a chance seedling. The tree is thought to be a hybrid of Malus sylvestris, the European wild apple, with the domesticated apple Malus domestica as the polleniser.
 
- aside
-    details
+    aside
+      details
         summary Jonagold
         p Jonagold is a cultivar of apple developed in 1953 at the New York State Agricultural Experiment Station of Cornell University's College of Agriculture and Life Sciences. It is a cross between the crisp Golden Delicious and the blush-crimson Jonathan. The name "Jonagold" is a portmanteau of these two variety names.
 
-    details
+      details
         summary Belle de Boskoop
         p Belle de Boskoop (also called Goudrenet, Goudreinet, or Goudreinnette) is an apple cultivar that originated in Boskoop, Netherlands, where it began as a chance seedling in 1856. Variants include Boskoop red, yellow, and green.
 
- footer © Apple Inc.
+    footer 
+      p © Apple Inc.

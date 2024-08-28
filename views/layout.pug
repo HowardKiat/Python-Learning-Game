@@ -1,6 +1,7 @@
 doctype html
 html
     head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
         block head
@@ -13,4 +14,4 @@ html
                 li: a(href='/temperature') Temperature
                 li: a(href='/responsivepage') Responsive Page
         main
-            block content 
+            block content

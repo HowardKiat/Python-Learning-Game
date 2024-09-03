@@ -36,9 +36,15 @@ app.get('/responsivepage', (req, res) => {
     res.render('responsivepage', { title: 'Responsive Page' });
 });
 
-app.get('/todolist', (req, res) => {
-    res.render('todolist', { title: 'Todo List' });
-});
+//TODO-LIST
+const todolistRoutes = require('./routes/todolist')(db);
+app.use('/', todolistRoutes);
+
+const addRoutes = require('./routes/add')(db);
+app.use('/', addRoutes);
+
+const completetaskRoute = require('./routes/completetask')(db);
+app.use(completetaskRoute);
 
 // Handle the form submission
 app.use('/', temperatureConversion);

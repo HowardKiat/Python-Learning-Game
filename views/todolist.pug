@@ -1,0 +1,18 @@
+form(action="/add", method="post")
+  h1 To-do List
+  label Task
+  input(type="text", name="task", placeholder="Task", required)
+  label Due Date
+  input(type="date", name="due_date", min!= minDate, required)
+  div.button-container
+    button(type="submit") Add Task
+    button(type="reset") Reset
+div.todo-list
+  each todo in todolist
+    div(class="box" + (todo.completed ? ' completed' : ''))
+      h3= todo.task
+      p= todo.due_date
+      if todo.completed == 0
+        a(href="completetask/" + todo.id + "/1") Mark Complete
+      else if todo.completed == 1
+        a(href="completetask/" + todo.id + "/0") Mark Incomplete

@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const temperatureConversion = require('./routes/temperature');
+const mysql = require('mysql2');
 
 const app = express();
 
@@ -35,8 +36,29 @@ app.get('/responsivepage', (req, res) => {
     res.render('responsivepage', { title: 'Responsive Page' });
 });
 
+app.get('/todolist', (req, res) => {
+    res.render('todolist', { title: 'Todo List' });
+});
+
 // Handle the form submission
 app.use('/', temperatureConversion);
+
+// Data Base Connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'todoapp',
+});
+
+db.connect((err) => {
+    if (err) {
+    console.error('Database connection failed:', err);
+    } else {
+    console.log('Connected to the database');
+    }
+});
+    
 
 // Port Listener
 app.listen(3000, function () {

@@ -1,0 +1,18 @@
+extends layout
+
+block head
+  title Edit Task
+  link(rel= 'stylesheet', href= '/stylesheets/todo.css')
+
+block content
+  form(action= "/edit/" + todo.id, method = "post")
+    h1 Edit Task
+    label(for = "task") Task
+    input(type = "text", name = "task", value =todo.task, required)
+
+    label(for = "due_date") Due Date
+    input(type = "date", name = "due_date", value=todo.due_date, required)
+    
+    div.button-container
+      button(type = "submit") Update Task
+      a(href = "/todolist") Cancel

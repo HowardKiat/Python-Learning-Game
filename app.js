@@ -59,6 +59,12 @@ db.connect((err) => {
         const addRoutes = require('./routes/add')(db);
         app.use('/', addRoutes);
 
+        const editRoutes = require('./routes/edit')(db);
+        app.use('/', editRoutes);
+
+        const deleteRoutes = require('./routes/delete')(db);
+        app.use('/', deleteRoutes);
+
         const completetaskRoute = require('./routes/completetask')(db);
         app.use(completetaskRoute);
 

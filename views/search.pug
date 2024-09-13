@@ -1,0 +1,16 @@
+extends layout
+
+block head
+  title Search Results
+  link(rel='stylesheet', href='/stylesheets/search.css')
+
+block content
+  .search-results-container
+    h1 Search Results
+
+    if results.length > 0
+      ul
+        each result in results
+          li= result.task
+    else
+      p.no-results No tasks found matching your search.

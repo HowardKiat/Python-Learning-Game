@@ -3,9 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const temperatureConversion = require('./routes/temperature');
-require('dotenv').config();
-
-
+// require('dotenv').config();
 const app = express();
 
 // Middleware to parse JSON and URL-encoded bodies
@@ -21,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set view engine as Pug
 app.set('view engine', 'pug');
 
-// Data Base Connection
+// Database Connection
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -64,6 +62,9 @@ db.connect((err) => {
 
         const deleteRoutes = require('./routes/delete')(db);
         app.use('/', deleteRoutes);
+
+        const searchRoutes = require('./routes/search')(db);
+        app.use('/', searchRoutes);  // Use search routes
 
         const completetaskRoute = require('./routes/completetask')(db);
         app.use(completetaskRoute);

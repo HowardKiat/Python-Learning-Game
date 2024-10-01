@@ -7,6 +7,14 @@ block head
 block content
   form(action= "/edit/" + todo.id, method = "post")
     h1 Edit Task
+    
+    label(for="category") Category
+    select(name="category", required)
+      option(value="") Select a category
+      option(value="work", selected=todo.category === 'work') Work
+      option(value="personal", selected=todo.category === 'personal') Personal
+      option(value="urgent", selected=todo.category === 'urgent') Urgent
+
     label(for = "task") Task
     input(type = "text", name = "task", value =todo.task, required)
 

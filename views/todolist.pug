@@ -11,9 +11,29 @@ block content
     input(type="text", name="query", placeholder="Search tasks...")
     button(type="submit") Search
 
+  //- Form to filter tasks by category
+  form(action="/category/filter", method="post")
+    label(for="filter_category") Filter by category 
+    select(name="filter_category", id="filter_category")
+      option(value="") Select a category
+      option(value="work") Work
+      option(value="personal") Personal
+      option(value="urgent") Urgent
+
+    div.button-container
+      button(type="submit") Filter
+      button(type="reset") Reset
+
   //- Form to add a new task
   form(action="/add", method="post")
     h1 To-do List
+    label(for="category") Category
+    select(name="category", required)
+      option(value="") Select a category
+      option(value="work") Work
+      option(value="personal") Personal
+      option(value="urgent") Urgent
+
     label(for="task") Task
     input(type="text", name="task", placeholder="Task", required)
     
@@ -22,19 +42,6 @@ block content
     
     div.button-container
       button(type="submit") Add Task
-      button(type="reset") Reset
-
-  //- Form to filter tasks by category
-  form(action="/filter", method="post")
-    label(for="filter_category") Filter by category
-    select(name="filter_category")
-      option(value="") Select a category
-      option(value="work") Work
-      option(value="personal") Personal
-      option(value="urgent") Urgent
-
-    div.button-container
-      button(type="submit") Filter
       button(type="reset") Reset
 
   //- Display the list of to-do items

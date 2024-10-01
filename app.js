@@ -4,7 +4,28 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const temperatureConversion = require('./routes/temperature');
 // require('dotenv').config();
+const session = require('express-session');
+
+//Imports the todo list routes from the todolist module in the routes directory. It passes the database connection (db) and the checkLoggedIn function as arguments to the imported module.
+const todolistRoutes = require('./routes/todolist')(db, checkLoggedIn);
 const app = express();
+
+// Session config
+app.use(session({
+    secret: 'todoapp',
+    resave: true,
+    saveUninitialized: true
+}));
+
+// This function checks if a user is logged in by checking the loggedin property of the session object. 
+function checkLoggedIn(req, res, next) {
+    if (req.session.loggedin) {
+        next();
+    } else {
+        req.session.error = 'Please Login!';
+        res.redirect('/login');
+    }
+}
 
 // Middleware to parse JSON and URL-encoded bodies
 app.use(bodyParser.json());
@@ -50,6 +71,13 @@ db.connect((err) => {
             res.render('responsivepage', { title: 'Responsive Page' });
         });
 
+        //LOGIN/REGISTRATION
+        const regiterRoutes= require('./routes/register')(db);
+        app.use('/', regiterRoutes);
+
+        const loginRoutes= require('./routes/login')(db);
+        app.use('/', loginRoutes);
+
         // TODO-LIST
         const todolistRoutes = require('./routes/todolist')(db);
         app.use('/', todolistRoutes);
@@ -66,6 +94,9 @@ db.connect((err) => {
         const searchRoutes = require('./routes/search')(db);
         app.use('/', searchRoutes);  // Use search routes
 
+        const categoryRoutes = require('./routes/category')(db);
+        app.use('/category', categoryRoutes);
+
         const completetaskRoute = require('./routes/completetask')(db);
         app.use(completetaskRoute);
 
@@ -78,3 +109,4 @@ db.connect((err) => {
         });
     }
 });
+
